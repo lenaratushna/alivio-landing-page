@@ -43,7 +43,7 @@ $text-font: 'Lato', sans-serif;
     font-family: $title-font;
     font-weight: bold;
     font-size: 50px;
-    line-height: 74px;
+    line-height: 157%;
 }
 
 @mixin h3-style {
@@ -63,17 +63,6 @@ $text-font: 'Lato', sans-serif;
     color: $font-color;
 }
 
-@mixin btn{
-    display: inline-block;
-    padding: 20px 50px;
-    background: $main-color;
-    border-radius: 4px;
-    font-family: $text-font;
-    text-align: center;
-    font-size: 20px;
-    color: #FFFFFF;
-}
-
 .wrapper{
     min-height: 100%;
     overflow: hidden;
@@ -89,6 +78,21 @@ $text-font: 'Lato', sans-serif;
 
 .content{
     flex: 1 1 auto;
+}
+
+.btn{
+    display: inline-block;
+    padding: 20px 50px;
+    background: $main-color;
+    border-radius: 4px;
+    font-family: $text-font;
+    text-align: center;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.btn:hover, .btn:focus, .btn:active{
+    background-color: $font-color;
 }
 
 .link{
@@ -204,10 +208,6 @@ $text-font: 'Lato', sans-serif;
         @include text-style();
         margin-bottom: 40px;
     }
-
-    &__btn {
-        @include btn();
-    }
 }
 
 /*Styles for section steps*/
@@ -319,12 +319,50 @@ $text-font: 'Lato', sans-serif;
     }
 }
 
+/*Styles for section story*/
+.story {
+    padding: 70px 0;
+    background: $bg-color;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__desc {
+        align-self: center;
+    }
+
+    &__video {
+        max-width: 800px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.desc {
+
+    &__title {
+        @include h2-style();
+        color: #FFFFFF;
+        margin-bottom: 33px;
+    }
+
+    &__text {
+        @include text-style();
+        color: #FFFFFF;
+        margin-bottom: 57px;
+    }
+}
+
+
 /*Media*/
 
 @media screen and (max-width: 1400px){
     .info {
         padding: 50px 0px;
         &__header {
+            justify-content: center;
             margin-bottom: 100px;
         }
     
@@ -339,6 +377,26 @@ $text-font: 'Lato', sans-serif;
     }
     .step3{
         margin-bottom: 0;
+    }
+
+    .story {
+        &__container {
+            flex-direction: column;
+        }
+        &__video {
+            max-width: 100%;
+        }
+    }
+    .desc{
+        position: relative;
+        &__btn{
+            position: absolute;
+            bottom: 44px;
+            right: 0;
+        }
+        &__title{
+            text-align: center;
+        }
     }
 }
 
@@ -432,6 +490,10 @@ $text-font: 'Lato', sans-serif;
         }
     }
 
+    .step__img {
+        max-width: 380px;
+    }
+
     .step1, .step2, .step3 {
         .step__title{
             text-align: center;
@@ -440,10 +502,21 @@ $text-font: 'Lato', sans-serif;
             left: 30%;
         }
     }
+
+}
+
+@media screen and (max-width: 767px){
+    .desc{
+        &__text{
+            font-size: 18px;
+        }
+        &__btn{
+        padding: 20px 20px;
+        }
+    }
 }
 
 @media screen and (max-width: 630px){
-    
     .header {
         &__container {
             flex-direction: column;
@@ -460,8 +533,33 @@ $text-font: 'Lato', sans-serif;
     .burger{
         margin-bottom: 15px;
     }
-}
+    .headline {
+        padding: 75px 0;
+        background: #f1f1f1;
+    }
 
+    .story{
+        padding: 30px 0;
+    }
+
+    .info__header_title{
+        font-size: 40px;
+    }
+
+    .desc{
+        &__title{
+            font-size: 40px;
+        }
+        &__text{
+            margin-bottom: 30px;
+        }
+        &__btn{
+           position: static;
+           width: 100%;
+           margin-bottom: 30px;
+        }
+    }
+}
 @media screen and (max-width: 480px){
     .header {
         &__logo {
@@ -469,8 +567,27 @@ $text-font: 'Lato', sans-serif;
             top: 17px;
         }
     }
+    .headline{
+        &__title {
+            font-size: 50px;
+            line-height: 64px;
+        }
+        &__text {
+            font-size: 18px;
+            line-height: 150%;  
+        }
+    }
+
+    .info__header_title {
+        font-size: 30px;
+    }
+
     .step__img {
         max-width: 280px;
+    }
+
+    .desc__title {
+        font-size: 30px;
     }
 }
 
