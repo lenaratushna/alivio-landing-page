@@ -30,7 +30,7 @@ a, a:visited{text-decoration: none;}
 a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;}
 /*--------------------*/
 
 $main-color: #01996D;
@@ -43,7 +43,7 @@ $text-font: 'Lato', sans-serif;
     font-family: $title-font;
     font-weight: bold;
     font-size: 50px;
-    line-height: 157%;
+    line-height: 74px;
 }
 
 @mixin h3-style {
@@ -64,9 +64,14 @@ $text-font: 'Lato', sans-serif;
 }
 
 @mixin btn{
+    display: inline-block;
     padding: 20px 50px;
     background: $main-color;
     border-radius: 4px;
+    font-family: $text-font;
+    text-align: center;
+    font-size: 20px;
+    color: #FFFFFF;
 }
 
 .wrapper{
@@ -77,7 +82,7 @@ $text-font: 'Lato', sans-serif;
 }
 
 .container{
-    max-width: 1560px;
+    max-width: 1360px;
     padding: 0 20px;
     margin: 0 auto;
 }
@@ -185,20 +190,163 @@ $text-font: 'Lato', sans-serif;
     padding: 175px 0 200px 0;
     background: url(../img/main-bg-min.jpg) center center/cover no-repeat ;
     &__container {
-
+        max-width: 440px;
     }
-
     &__title {
+        font-family: $title-font;
+        font-weight: 600;
+        font-size: 65px;
+        line-height: 74px;
+        color: $main-color;
+        margin-bottom: 30px;
     }
-
     &__text {
+        @include text-style();
+        margin-bottom: 40px;
     }
 
     &__btn {
+        @include btn();
+    }
+}
+
+/*Styles for section steps*/
+
+.info {
+    padding: 75px 0 50px 0;
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        &_title {
+            max-width: 584px;
+            margin-bottom: 30px;
+            @include h2-style();
+            color: $main-color;
+            .label {
+                font-family: $text-font;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 157%;
+                color: #424242;
+            }
+        }
+
+        &_text {
+            max-width: 671px;
+            @include text-style();
+            align-self: center;
+        }
+    }
+
+    &__body {
+        height: 930px;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    &__item {
+        flex: 0 0 30%;
+    }
+}
+.step {
+
+    &__title {
+        @include h3-style();
+        margin-bottom: 37px;
+    }
+
+    &__text {
+        @include text-style();
+        margin-bottom: 37px;
+    }
+
+    &__img {
+        max-width: 390px;
+    }
+}
+
+.step1, .step3{
+    .step__title{
+        text-align: center;
+    }
+}
+
+.step1{
+    align-self: flex-start;
+    position: relative;
+    .step__title::before{
+        position: absolute;
+        left: 20px;
+        top: -45px;
+        content: '01';
+        font-weight: normal;
+        font-size: 150px;
+        color: rgba(1, 153, 109, 0.2);
+    }
+}
+
+.step2{
+    position: relative;
+    align-self: flex-end;
+    .step__title{
+        text-align: end;
+    }
+    .step__title::before{
+        position: absolute;
+        left: 20px;
+        top: -45px;
+        content: '02';
+        font-weight: normal;
+        font-size: 150px;
+        color: rgba(1, 153, 109, 0.2);
+    }
+}
+
+.step3{
+    position: relative;
+    align-self: center;
+    margin-bottom: 160px;
+    .step__title::before{
+        position: absolute;
+        left: 45px;
+        top: -45px;
+        content: '03';
+        font-weight: normal;
+        font-size: 150px;
+        color: rgba(1, 153, 109, 0.2);
     }
 }
 
 /*Media*/
+
+@media screen and (max-width: 1400px){
+    .info {
+        padding: 50px 0px;
+        &__header {
+            margin-bottom: 100px;
+        }
+    
+        &__body {
+            height: 500px;
+        }
+    }
+    .step {
+        &__img {
+            max-width: 200px;
+        }
+    }
+     
+    .step1, .step2, .step3{
+        align-self: flex-start;
+    }
+
+    .step3{
+        margin-bottom: 0;
+    }
+}
 
 @media screen and (max-width: 992px){
     .header {
@@ -216,7 +364,7 @@ $text-font: 'Lato', sans-serif;
            top: 0;
            left: 0;
            padding: 100px 75px;
-           background: linear-gradient(#FFFFFF,$bg-color);
+           background: linear-gradient(#FFFFFF,$main-color);
            z-index: 10;
            transform: translateY(-100%);
            transition: .2s ease;
@@ -274,6 +422,10 @@ $text-font: 'Lato', sans-serif;
         &__item:last-child{
             margin-bottom: 0;
         }
+    }
+
+    .info__body{
+        flex-direction: column;
     }
 }
 
