@@ -307,7 +307,6 @@ $text-font: 'Lato', sans-serif;
 
 .step3{
     position: relative;
-    align-self: center;
     margin-bottom: 160px;
     .step__title::before{
         position: absolute;
@@ -338,11 +337,6 @@ $text-font: 'Lato', sans-serif;
             max-width: 200px;
         }
     }
-     
-    .step1, .step2, .step3{
-        align-self: flex-start;
-    }
-
     .step3{
         margin-bottom: 0;
     }
@@ -423,9 +417,28 @@ $text-font: 'Lato', sans-serif;
             margin-bottom: 0;
         }
     }
+    .info {
+        &__body {
+            height: auto;
+            flex-direction: column;
+            text-align: center;
+        }
+        &__item {
+            flex: 0 0 100%;
+            margin-bottom: 100px;
+        }
+        &__item:last-child {
+            margin-bottom: 0;
+        }
+    }
 
-    .info__body{
-        flex-direction: column;
+    .step1, .step2, .step3 {
+        .step__title{
+            text-align: center;
+        }
+        .step__title::before{
+            left: 30%;
+        }
     }
 }
 
@@ -455,6 +468,9 @@ $text-font: 'Lato', sans-serif;
             left: 100px;
             top: 17px;
         }
+    }
+    .step__img {
+        max-width: 280px;
     }
 }
 
