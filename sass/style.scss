@@ -115,7 +115,6 @@ $text-font: 'Lato', sans-serif;
     background: #FFFFFF;
     border-bottom: 1px solid #D6D6D6;
     &__container {
-        padding: 17px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -195,7 +194,7 @@ $text-font: 'Lato', sans-serif;
 /*Styles for headline*/
 
 .headline {
-    padding: 175px 0 200px 0;
+    padding: 260px 0 200px 0;
     background: url(../img/main-bg-min.jpg) center center/cover no-repeat ;
     &__container {
         max-width: 440px;
@@ -394,6 +393,32 @@ $text-font: 'Lato', sans-serif;
     }
 }
 
+/*Styles for footer*/
+
+.footer {
+    padding: 50px 0;
+    background: $bg-color;
+    &__logo{
+        font-size: 30px;
+        line-height: 55px;
+        font-family: $text-font;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+}
+
+.menu {
+
+    &_link {
+        color: #FFFFFF;
+    }
+
+    &__list {
+        display: block;
+    }
+}
+
 /*Media*/
 
 @media screen and (max-width: 1400px){
@@ -466,6 +491,9 @@ $text-font: 'Lato', sans-serif;
 
 @media screen and (max-width: 992px){
     .header {
+        &__container{
+            padding: 17px 0;
+        }
         &__logo {
             order: 2;
         }
@@ -626,7 +654,7 @@ $text-font: 'Lato', sans-serif;
         margin-bottom: 15px;
     }
     .headline {
-        padding: 50px 0;
+        padding: 150px 0 50px 0;
         background: #f1f1f1;
     }
 
@@ -670,7 +698,7 @@ $text-font: 'Lato', sans-serif;
         }
     }
 
-    .info__header_title,.desc__title, .product__info_title{
+    .info__header_title,.desc__title, .product__info_title, .footer{
         font-size: 30px;
     }
 
