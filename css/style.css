@@ -101,6 +101,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Styles for header*/
 .header {
+  position: fixed;
+  z-index: 199;
+  width: 100%;
+  background: #FFFFFF;
   border-bottom: 1px solid #D6D6D6; }
   .header__container {
     padding: 17px 0;
@@ -345,6 +349,42 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
   margin-bottom: 57px; }
 
+/* Styles for section product*/
+.product {
+  padding: 70px 0; }
+  .product__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .product__img {
+    max-width: 500px; }
+    .product__img img {
+      width: 100%; }
+  .product__info {
+    max-width: 584px; }
+    .product__info_title {
+      font-family: "Georgia", "Century Schoolbook", serif;
+      font-weight: bold;
+      font-size: 50px;
+      line-height: 157%;
+      color: #01996D;
+      margin-bottom: 20px; }
+      .product__info_title .label {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 157%;
+        color: #424242; }
+    .product__info_text {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      color: #424242;
+      margin-bottom: 40px; }
+
 /*Media*/
 @media screen and (max-width: 1400px) {
   .info {
@@ -379,6 +419,27 @@ h1, h2, h3, h4, h5, h6 {
       right: 0; }
     .desc__title {
       text-align: center; } }
+@media screen and (max-width: 1228px) {
+  .product {
+    padding: 50px 0; }
+    .product__img {
+      max-width: 400px; }
+      .product__img img {
+        width: 100%; }
+    .product__info {
+      max-width: 500px; }
+      .product__info_title {
+        font-size: 40px;
+        line-height: 140%; }
+        .product__info_title .label {
+          font-size: 20px; }
+      .product__info_text {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: #424242;
+        margin-bottom: 30px; } }
 @media screen and (max-width: 992px) {
   .header__logo {
     -webkit-box-ordinal-group: 3;
@@ -468,7 +529,37 @@ h1, h2, h3, h4, h5, h6 {
   .step1 .step__title, .step2 .step__title, .step3 .step__title {
     text-align: center; }
   .step1 .step__title::before, .step2 .step__title::before, .step3 .step__title::before {
-    left: 30%; } }
+    left: 30%; }
+
+  .product {
+    padding: 50px 0; }
+    .product__container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: reverse;
+          -ms-flex-direction: column-reverse;
+              flex-direction: column-reverse;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .product__img {
+      max-width: 500px; }
+      .product__img img {
+        width: 100%; }
+    .product__info {
+      margin-bottom: 30px;
+      max-width: 100%; }
+      .product__info_title {
+        font-size: 40px;
+        line-height: 140%; }
+        .product__info_title .label {
+          font-size: 20px; }
+      .product__info_text {
+        font-family: "Lato", sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        color: #424242;
+        margin-bottom: 30px; } }
 @media screen and (max-width: 767px) {
   .desc__text {
     font-size: 18px; }
@@ -492,11 +583,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px; }
 
   .headline {
-    padding: 75px 0;
+    padding: 50px 0;
     background: #f1f1f1; }
 
   .story {
-    padding: 30px 0; }
+    padding: 50px 0; }
 
   .info__header_title {
     font-size: 40px; }
@@ -521,14 +612,11 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 18px;
     line-height: 150%; }
 
-  .info__header_title {
+  .info__header_title, .desc__title, .product__info_title {
     font-size: 30px; }
 
   .step__img {
-    max-width: 280px; }
-
-  .desc__title {
-    font-size: 30px; } }
+    max-width: 280px; } }
 @media screen and (max-width: 320px) {
   .link {
     font-size: 16px; }

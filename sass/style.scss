@@ -109,6 +109,10 @@ $text-font: 'Lato', sans-serif;
 /*Styles for header*/
 
 .header {
+    position: fixed;
+    z-index: 199;
+    width: 100%;
+    background: #FFFFFF;
     border-bottom: 1px solid #D6D6D6;
     &__container {
         padding: 17px 0;
@@ -355,6 +359,40 @@ $text-font: 'Lato', sans-serif;
     }
 }
 
+/* Styles for section product*/
+
+.product {
+    padding: 70px 0;
+    &__container{
+        display: flex;
+        justify-content: space-around;
+    }
+    &__img {
+        max-width: 500px;
+        img{
+            width: 100%;
+        }
+    }
+    &__info {
+        max-width: 584px;
+        &_title {
+            @include h2-style();
+            color: $main-color;
+            margin-bottom: 20px;
+            .label{
+                font-family: $text-font;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 157%;
+                color: #424242;
+            }
+        }
+        &_text {
+            @include text-style();
+            margin-bottom: 40px;
+        }
+    }
+}
 
 /*Media*/
 
@@ -396,6 +434,32 @@ $text-font: 'Lato', sans-serif;
         }
         &__title{
             text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1228px){
+    .product {
+        padding: 50px 0;
+        &__img {
+            max-width: 400px;
+            img{
+                width: 100%;
+            }
+        }
+        &__info {
+            max-width: 500px;
+            &_title {
+                font-size: 40px;
+                line-height: 140%;
+                .label{
+                    font-size: 20px;
+                }
+            }
+            &_text {
+                @include text-style();
+                margin-bottom: 30px;
+            }
         }
     }
 }
@@ -503,6 +567,34 @@ $text-font: 'Lato', sans-serif;
         }
     }
 
+    .product {
+        padding: 50px 0;
+        &__container{
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        &__img {
+            max-width: 500px;
+            img{
+                width: 100%;
+            }
+        }
+        &__info {
+            margin-bottom: 30px;
+            max-width: 100%;
+            &_title {
+                font-size: 40px;
+                line-height: 140%;
+                .label{
+                    font-size: 20px;
+                }
+            }
+            &_text {
+                @include text-style();
+                margin-bottom: 30px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -534,12 +626,12 @@ $text-font: 'Lato', sans-serif;
         margin-bottom: 15px;
     }
     .headline {
-        padding: 75px 0;
+        padding: 50px 0;
         background: #f1f1f1;
     }
 
     .story{
-        padding: 30px 0;
+        padding: 50px 0;
     }
 
     .info__header_title{
@@ -578,7 +670,7 @@ $text-font: 'Lato', sans-serif;
         }
     }
 
-    .info__header_title {
+    .info__header_title,.desc__title, .product__info_title{
         font-size: 30px;
     }
 
@@ -586,9 +678,6 @@ $text-font: 'Lato', sans-serif;
         max-width: 280px;
     }
 
-    .desc__title {
-        font-size: 30px;
-    }
 }
 
 @media screen and (max-width: 320px){
